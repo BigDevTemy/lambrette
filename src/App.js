@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-
+import {BrowserRouter,Link,Switch,Route,useHistory} from 'react-router-dom'
+import { List, Placeholder,Image, Container ,Message, Segment} from 'semantic-ui-react';
+import routes from './route'
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import 'semantic-ui-css/semantic.min.css'
 function App() {
+  // console.log(routes)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <BrowserRouter>
+        <Switch>
+          {routes.map((route,index)=>(
+          <Route
+          key={index}
+           path={route.path}
+           exact
+           render={(props)=><route.component {...props}/>}
+           >
+
+          </Route>))
+          
+          }
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

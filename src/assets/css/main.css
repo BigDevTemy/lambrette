@@ -1,0 +1,587 @@
+.logo{ 
+    width: 160px;
+    height: 55px;
+    margin-left: 20px;
+}
+*{
+    box-sizing: border-box;
+}
+.menu{
+    display:none;
+}
+.cart{
+    width: 30px;
+    align-self: top;
+    margin-left: 50px;
+    cursor: pointer;
+    
+}
+.NavItemCustom{
+    font-weight: bolder;
+}
+.navDiv{
+    width: 100%;
+    height:80px;
+}
+.landingUIDiv{
+    background: url('../images/hero_banner.png');
+    width:100%;
+    height:80vh;
+    
+}
+.bannerText{
+    color:#fff;
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    width: 400px;
+    margin-top: 5%;
+
+}
+.bannerText >p{
+    font-size: 20px;
+    font-weight: bold;
+}
+.ChildDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:40px;
+    
+}
+.demoImage{
+    width: 200px;
+}
+
+.btn-customize{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    color:#1B5174;
+    font-size: 14px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 50px;
+    cursor: pointer;
+}
+.demoImageDiv{
+    margin-top: 5%;
+    display: flex;
+    
+}
+.demoImageDiv > div{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+   
+}
+
+.demoImageII{
+    height: 150px;
+    
+}
+.demoImageIII{
+    height: 150px;
+    margin-top: 20px;
+}
+.NavBarCustom{
+    padding:40px
+}
+
+.mynav{
+    width:100%;
+    height:100px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding:20px;
+    
+}
+
+.navItems{
+    display: flex;
+    padding:20px
+    
+}
+.navItems > div{
+    padding-left:30px;
+}
+
+a:link{
+    text-decoration: none;
+    color:#000;
+    font-weight: bold;
+}
+a:visited{
+    color:#fff
+}
+a:hover{
+    color:#1B5174
+}
+
+
+.sponsor-container{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+   
+    
+
+}
+.sponsor-container::-webkit-scrollbar{
+    display: none;
+}
+
+.sponsor-container > div{
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+.ourproducts{
+    width: 100%;
+    height: 100vh;
+    background: #f1f5f9 ;
+    text-align: left;
+    padding: 40px;
+}
+.ourproducts >h1{
+    color:#1B5174;
+}
+
+.containerProducts{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.containerProducts > div{
+    text-align: left;
+}
+.categoryImage{
+    width: 100%;
+    height: 80%;
+    
+    
+}
+.productTitle{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    background: #fff;
+    width: 100%;
+    padding-right: 10px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 20%;
+    
+}
+
+.title{
+    width: 70%;
+    font-size: 14px;
+    margin-left: 10px;
+    padding:10px
+}
+
+.pointer_size{
+    width: 25px;
+    margin-top: 10px;
+    cursor: pointer;
+    
+}
+
+.catergoryDIV{
+    
+    width: 25%;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.4);
+    border-radius: 20px;
+    
+}
+
+.footer{
+    width: 100%;
+    height: 50vh;
+    background: #000;
+    padding:40px;
+    color:#fff;
+    
+}
+
+.mainfootercover{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+    margin: 20px;
+}
+.footer-image{
+    width:200px;
+}
+.social-media{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   
+}
+.socialmedia-icon > span{
+    padding: 10px;
+    cursor: pointer;
+}
+.footer-tab{
+    width: 100%;
+    margin-top: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.footer-tab > div{
+    align-self: center;
+}
+.footer_ourproducts > div{
+    margin-bottom: 20px;
+}
+
+.fab-banner{
+    width: 100%;
+    height: 50vh;
+    background: url('../images/banner/fabricated_banner.png');
+    text-align: left;
+    color: #fff;
+    padding-left: 30px;
+    padding-top: 30vh;
+}
+.description{
+    text-align: left;
+    display: flex;
+    margin-top: 10%;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.imageDiv_fab_desc{
+    display: flex;    
+    padding-left: 30px;
+    
+}
+.small_fab_image{
+    width:280px;
+}
+.small_fab_image_i{
+    width:280px;
+    margin-top:20px;
+}
+
+.divSplit{
+    display: flex;
+    flex-direction: column;
+    
+}
+.fab_image{
+    width: 450px;
+    padding-right: 20px;
+}
+.more_details{
+
+    padding-left: 20px;
+    margin-left: 10px;
+    font-size: 18px;
+    align-self: center;    
+}
+
+.more_details > h2{
+    color: #1B5174;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    
+}
+.description_list{
+    width: 30px;
+    margin-right: 10px;
+   
+}
+
+
+.features{
+    font-weight: bolder;
+    font-size: 30px;
+    color: #1B5174;
+}
+.featureDiv{
+    background: #d5d5d5;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    padding:30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+
+}
+.list_feature > h1{
+    color: #1B5174;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 25px;
+   
+}
+.list_feature >p{
+    margin-top: 10px;
+}
+
+.list_feature{
+    text-align: left;
+}
+.thumbnail{
+    width: 35%;
+}
+
+.listImage_child{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.P_specifcation{
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    text-align: left;
+    padding:40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.DivCard{
+    border-radius:10px;
+    border:1px solid #d5d5d5;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.4);
+    text-align: center;
+    padding: 20px;
+    width: 23%;
+}
+
+.mainDiv{
+    padding:30px;
+}
+
+.mainDiv >h1{
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1B5174;
+    font-size: 25px;
+    text-align: left;
+    margin-top: 20px;
+    
+}
+
+.DivCardImage{
+    width: 100%;
+}
+
+.circular{
+    width:30px;
+    height: 30px;
+    border:1px solid #1B5174;
+    border-radius:20px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+.viewdetails_btn{
+    margin-top: 5px;
+    border-radius: 20px;
+    background: #000;
+    color:#fff;
+    font-size: 14px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.viewmore_btn{
+    margin-top: 10px;
+    border-radius: 20px;
+    background:#1B5174;
+    color:#fff;
+    font-size: 14px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 20%;
+    margin:auto;
+}
+.viewmore_cover{
+    width:100%;
+    
+    
+}
+
+.placeholderHeader{
+    display: flex;
+    justify-content: space-between;
+    
+} 
+.makeOrderCover{
+    width: 100%;
+    display: flex;
+}
+.ImageOrder{
+    width: 50%;
+    background: #000;
+}
+.productTitle{
+    display:flex;
+    justify-content: space-between;
+    height: 50px;
+    
+}
+.topModal{
+    width: 80%;
+    height: 70px;
+    background: #1B7449;
+    font-size: 14px;
+    border-radius: 12px;
+    padding:10px;
+    margin-left: 20px;
+    color: #fff;
+}
+
+.selectCustom{
+    margin-left:20px;
+    margin-top:20px;
+    width:80%;
+}
+.selectCustomII{
+    display:flex;
+    justify-content:space-between;
+    width:80%;
+    margin-left:20px;
+    margin-top:20px;
+}
+.newDispensation{
+    font-weight:bolder;
+    font-size:40px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.leverageClass{
+    margin-top:50px
+}
+
+@media screen and (max-width: 900px) {
+    .containerProducts{
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+    .ourproducts{
+        position: relative;
+    }
+    .catergoryDIV{
+        width:80%;
+        margin-bottom: 20px;
+    }
+    .navItems {
+      display:none;
+      
+    }
+    .menu{
+        display: inline;
+        line-height: 60px;
+        cursor: pointer;
+    }
+    .bannerText{
+        color:#fff;
+        font-family: Arial;
+        font-weight: bolder;
+        font-size: 35px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: left;
+        width: 400px;
+        margin-top: 3%;
+    
+    }
+    
+    .ChildDiv{
+        justify-content: center;
+    }
+    .btn-customize{
+        margin-top: 25px;
+    }
+    
+    .demoImageDiv{
+        margin-top: 25vh
+    }
+    .sponsor{
+        margin-top: 80vh;
+    }
+    
+    .landingUIDiv{
+        height: 55vh;
+    }
+    
+    .footer{
+        display: none;
+    }
+    .newDispensation{
+        font-weight:bold;
+        font-size:30px;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    .leverageClass{
+        margin-top: 15px;
+    }
+    .landingUIDiv{
+        height: 50vh;
+    }
+    
+    .listImage{
+        flex-direction: column;
+    }
+    .featureDiv{
+        height: 80vh;
+    }
+    .P_specifcation{
+        
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .DivCard{
+        width: 70%;
+        margin: 10px;
+    }
+    .description{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .fab_image{
+        width: 250px;
+        height: 400px;
+    }
+    .small_fab_image  {
+        width: 200px;
+    }
+    .small_fab_image_i  {
+        width: 200px;
+    }
+    .more_details{
+        font-size: 18px;
+    }
+  }
