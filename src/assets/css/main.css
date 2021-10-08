@@ -6,6 +6,52 @@
 *{
     box-sizing: border-box;
 }
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    border: none;
+    padding:10px;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #1B5174;color:#fff}
+
+
 .menu{
     display:none;
 }
@@ -103,7 +149,7 @@
 
 .navItems{
     display: flex;
-    padding:20px
+    padding:10px
     
 }
 .navItems > div{
@@ -116,7 +162,7 @@ a:link{
     font-weight: bold;
 }
 a:visited{
-    color:#fff
+    color:#000
 }
 a:hover{
     color:#1B5174
@@ -167,8 +213,6 @@ a:hover{
 .categoryImage{
     width: 100%;
     height: 80%;
-    
-    
 }
 .productTitle{
     display: flex;
@@ -266,6 +310,7 @@ a:hover{
     justify-content: space-between;
     width: 100%;
     
+    
 }
 .imageDiv_fab_desc{
     display: flex;    
@@ -325,6 +370,7 @@ a:hover{
     padding:30px;
     margin-top: 20px;
     flex-wrap: wrap;
+    
 
 }
 .list_feature > h1{
@@ -345,6 +391,10 @@ a:hover{
     width: 35%;
 }
 
+.thumbnail_img{
+    width:30%;
+    height: 200px;
+}
 .listImage_child{
     display: flex;
     justify-content: space-between;
@@ -372,6 +422,7 @@ a:hover{
 
 .mainDiv{
     padding:30px;
+    background:#f1f5f9
 }
 
 .mainDiv >h1{
@@ -446,6 +497,7 @@ a:hover{
     display:flex;
     justify-content: space-between;
     height: 50px;
+    background: #f1f5f9;
     
 }
 .topModal{

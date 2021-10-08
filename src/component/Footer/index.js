@@ -23,22 +23,24 @@ const index = ()=>{
                </div>
                <div className="footer_ourproducts">
                   <h5> Our Products</h5>
-                  <div className="mt-4"><a href="">Prefabricated Cold Chain</a></div>
-                  <div><a href="">Cooling Unit</a></div>
-                  <div><a href="">Insulation</a></div>
+                  <div className="mt-4"><a href="/boulos/prefabricated/cold/chain" style={{color:'#fff'}}>Prefabricated Cold Chain</a></div>
+                  <div><a href="/boulos/cooling/units" style={{color:'#fff'}}>Cooling Unit</a></div>
+                  <div><a href="/boulos/insulation/panel" style={{color:'#fff'}}>Insulation</a></div>
                   
                </div>
                <div className="footer_ourproducts">
-                   <h5>Useful Links</h5>
-                   <div className="mt-4"><a href=""  >Home</a></div>
-                  <div><a href="">About us</a></div>
-                  <div><a href="">Vechicle</a></div>
+                   <h5>Services</h5>
+                   <div className="mt-4"><a href="" style={{color:'#fff'}} >Consultation</a></div>
+                  <div><a href="" style={{color:'#fff'}}>After Sales </a></div>
+                  <div><a href="" style={{color:'#fff'}}>Cold Chain</a></div>
                   
                </div>
                <div className="footer_ourproducts">
                    <h5>Contact Us</h5>
-                   <div><a href="">Email Address:webdev@outlook.com</a></div>
+                   <div><a href="" style={{color:'#fff'}}>Email Address:webdev@outlook.com</a></div>
+                   
                </div>
+               
            </div>
           
         </div>

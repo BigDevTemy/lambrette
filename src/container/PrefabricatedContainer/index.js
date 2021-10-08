@@ -11,7 +11,6 @@ const index = ()=>{
             <Header/>
             <PrefabricatedUI/>
             <Description/>
-            <Featured/>
             <ProductSpecification/>
             <Footer/>
             

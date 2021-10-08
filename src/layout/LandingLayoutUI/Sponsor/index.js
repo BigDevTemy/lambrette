@@ -12,7 +12,7 @@ const index = ()=>{
             
                <div className="sponsor"> 
                    
-               <h3 style={{marginTop:20}}>Our Sponsor</h3>
+               <h3 style={{marginTop:20}}>OEM Partners</h3>
                 <div className="sponsor-container">
                     
                      
@@ -22,14 +22,14 @@ const index = ()=>{
                     </div>
                     
 
-                    <div>
+                    {/* <div>
                         <Image className="sponsor-item " src={Image2} style={{width:120}}/>
                     
                     </div>
                     <div>
                         <Image className="sponsor-item " src={Image3} style={{width:120}}/>
                     
-                    </div>
+                    </div> */}
                     
                     
                 </div>

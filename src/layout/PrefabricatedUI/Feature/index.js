@@ -18,8 +18,8 @@ const index = ()=>{
 
            <div className="listImage">
                     <div className="listImage_child">
-                         <Image src={image1} className="thumbnail"/>
-                         <Image src={image3} className="thumbnail"/>
+                         <Image src={image1} className="thumbnail_img"/>
+                         <Image src={image3} className="thumbnail_img"/>
                     </div>
                     <div><Image src={image2} className="thumbnail" style={{marginTop:10}}/></div>
            </div>

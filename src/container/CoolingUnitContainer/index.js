@@ -1,6 +1,10 @@
+import React from "react";
+import Header from '../../component/Header'
 const index = ()=>{
     return(
-        <div>Welcome To Cooling Unit Section</div>
+        <div>
+            <Header/>
+        </div>
     )
 }
 

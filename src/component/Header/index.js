@@ -13,10 +13,34 @@ const Header = ()=>{
             <div className="mynav">
                 <div className="brandDiv"><Image src={logo} className="logo"/></div>
                 <div className="navItems">
-                    <div><a href="#">Home</a></div>
-                    <div><a href="#">About</a></div>
-                    <div><a href="#">Vechicle</a></div>
-                    <div><a href="#">After Sales</a></div>
+                   
+                    <div class="dropdown">
+                        <div class="dropbtn"><a href="/boulos/exhibition" style={{color:'#000'}}>Home</a></div>
+                        
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropbtn">Products</div>
+                        <div class="dropdown-content">
+                            <a href="/boulos/prefabricated/cold/chain">Prefabricated Cold Chain Solution</a>
+                            <a href="/boulos/cooling/units">Cooling Unit</a>
+                            <a href="/boulos/insulation/panel">Insulation Panel</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropbtn">Services</div>
+                        <div class="dropdown-content">
+                            <a href="">Consultation</a>
+                            <a href="">After Sales</a>
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Solutions</button>
+                        <div class="dropdown-content">
+                            <a href="">Cold Chain</a>
+                            
+                        </div>
+                    </div>
                     <div><Image src={cart}  className="cart"/></div>
                 </div>
                 <div className="menu"><List color="black" size={30} /></div>

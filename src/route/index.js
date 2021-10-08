@@ -6,24 +6,25 @@ import React from 'react'
  import MakeOrder from '../container/MakeOrder'
 const routes = [
     {
-        path:"boulos/insulation/panel",
+        path:"/boulos/insulation/panel",
         component:InsulatorPanelComponent,
         title:'Insulator Panel'
     },
-    {
-        path:"boulos/cooling/units",
-        component:CoolingUnitComponent,
-        title:'Cooling Unit'
-    },
+    
     {
         path:"/boulos/prefabricated/cold/chain",
         component:PrefabricatedComponent,
         title:'Prefabricated Cold Chain Solution'
     },
     {
+        path:"/boulos/cooling/units",
+        component:CoolingUnitComponent,
+        title:'Cooling Unit'
+    },
+    {
         path:"/boulos/exhibition",
         component:LandingComponent,
-        title:'Lambrett Exhibition'
+        title:'Lamberet Exhibition'
     },
     {
         path:"/boulos/makeorder",
