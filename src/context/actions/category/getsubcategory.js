@@ -1,18 +1,19 @@
-import React from "react";
 import axios from "../../../helper/axios";
-import { CATEGORY_ERROR, CATEGORY_LOADING,CATEGORY_SUCCESS } from "../../../constants/actionTypes";
-// import axios from 'axios'
+import { SUB_CATEGORY_ERROR, SUB_CATEGORY_LOADING, SUB_CATEGORY_SUCCESS } from "../../../constants/actionTypes"
 
-export default ()=>(dispatch)=>{
+export default(cart_id)=>(dispatch)=>{
+
     dispatch({
-        type:CATEGORY_LOADING
+        type:SUB_CATEGORY_LOADING,
     })
     
-    axios.get('getallcategory')
+    axios.post('getSubcategoryList',JSON.stringify({
+        id: cart_id,
+        }))
     .then((res)=>{
         console.log('res',res.data)
         dispatch({
-            type:CATEGORY_SUCCESS,
+            type:SUB_CATEGORY_SUCCESS,
             payload:res.data
 
         })
@@ -20,9 +21,11 @@ export default ()=>(dispatch)=>{
     .catch((err)=>{
         console.log('err',err);
         dispatch({
-            type:CATEGORY_ERROR,
+            type:SUB_CATEGORY_ERROR,
             payload:err.reponse ? err.response.data : 'CONNECTION ERROR'
 
         })
     })
+
+
 }

@@ -1,4 +1,4 @@
-import {CATEGORY_LOADING ,CATEGORY_SUCCESS} from '../../constants/actionTypes'
+import {CATEGORY_ERROR, CATEGORY_LOADING ,CATEGORY_SUCCESS} from '../../constants/actionTypes'
 const category = (state,{payload,type})=>{
     
     switch(type){
@@ -6,7 +6,7 @@ const category = (state,{payload,type})=>{
             return{
                 ...state,
                 category:{
-                    ...state.auth,
+                    ...state.category,
                     error: false,
                     loading:true
                 }
@@ -18,6 +18,17 @@ const category = (state,{payload,type})=>{
                         ...state.category,
                         loading: false,
                         data:payload
+                    },
+        };
+        case CATEGORY_ERROR:
+                return{
+                    ...state,
+                    category:{
+                        ...state.category,
+                        loading: false,
+                        data:null,
+                        error:payload
+
                     },
         };
         default :

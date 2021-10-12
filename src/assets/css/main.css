@@ -206,6 +206,8 @@ a:hover{
     justify-content: space-between;
     margin-top: 30px;
     flex-wrap: wrap;
+    
+    
 }
 .containerProducts > div{
     text-align: left;
@@ -418,6 +420,7 @@ a:hover{
     text-align: center;
     padding: 20px;
     width: 23%;
+    
 }
 
 .mainDiv{
@@ -608,7 +611,7 @@ a:hover{
     .featureDiv{
         height: 80vh;
     }
-    .P_specifcation{
+    .P_specification{
         
         justify-content: center;
         align-items: center;

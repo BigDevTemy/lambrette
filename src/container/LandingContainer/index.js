@@ -14,6 +14,7 @@ const Exhibition = ()=>{
     console.log(categoryState);
     const {category:{loading}} = categoryState;
     const {category:{data}} = categoryState;
+    const {category:{error}} = categoryState;
     useEffect(()=>{
         getCategory()(categoryDispatch)
         
@@ -29,7 +30,7 @@ const Exhibition = ()=>{
             </div>
             
             <div>
-                <Ourproducts loading={loading} data={data}/>
+                <Ourproducts loading={loading} data={data} error={error}/>
             </div>
             <div>
                 <Sponsor/>
