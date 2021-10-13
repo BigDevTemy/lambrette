@@ -26,7 +26,12 @@ const Specification = ({loading,data})=>{
     const [requiredtemp, setRequiredtemp] = useState("")
     const [vanbox, setVanBox] = useState("")
     const [boxvolume, setBoxvolume] = useState("")
-    const [viewmore, setviewmore] = useState(false)
+    const [viewmore, setviewmore] = useState(false);
+    const [display, setdisplay]= useState('flex');
+    const [viewmoredisplay, setviewmoredisplay] = useState('flex');
+   
+
+    console.log('display',display)
     const Cart = (data)=>{
         
        setOpen(true);
@@ -226,7 +231,7 @@ const Specification = ({loading,data})=>{
 
             </div>
             
-            <div style={{display:'flex',flexWrap:'wrap',justifyContent:'space-between'}}>
+            <div style={{display:display,flexWrap:'wrap',justifyContent:'space-between'}}>
                 {data && data.length > 0 ? data.slice(0,6).map((d)=>{
                    return  <div className="DivCard" style={{ flex: '0 0 30%',marginBottom:20}}>
                                 <Image src={Image2} className="DivCardImage" />
@@ -235,22 +240,23 @@ const Specification = ({loading,data})=>{
                                         {d.product_name}
                                     </div>
                                     <div>
-                                        <div className="circular" onClick={()=>{Cart(d);}}>
-                                            <Image src={AddToCart} style={{width:10,height:10}} />
+                                        <div className="circular"  onClick={()=>{Cart(d);}}>
+                                            <Image src={AddToCart} style={{width:10,height:10,alignSelf:'center'}} />
                                         </div>
                                     </div>
                                     
                                 </div>
-                                <div className="viewdetails_btn">View Details</div>
+                                <div className="viewdetails_btn" onClick={()=>{Cart(d);}}>Add To Cart</div>
                             </div> 
                 }) 
                 :<div><h3>No Product Found</h3></div>}
 
             </div>
-        {data && data.length > 6 ? <div className="viewmore_cover" onClick={()=>{setviewmore(true)}}>
-            <div className="viewmore_btn">View More</div>
+        {data && data.length > 6 ? <div className="viewmore_cover" style={{display:viewmoredisplay}}  onClick={()=>{setviewmore(true);setdisplay('none');setviewmoredisplay('none')}}>
+            <div className="viewmore_btn" >View More</div>
         </div>
         :null}
+        <div style={{display:'flex',flexWrap:'wrap',justifyContent:'space-between'}}>
         {viewmore && 
                 data.map((d)=>{
                    return  <div className="DivCard" style={{ flex: '0 0 30%',marginBottom:20}}>
@@ -270,6 +276,8 @@ const Specification = ({loading,data})=>{
                             </div> 
                 })
             }
+        </div>
+       
         </div>
         
     )
