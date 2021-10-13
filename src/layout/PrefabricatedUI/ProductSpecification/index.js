@@ -26,6 +26,7 @@ const Specification = ({loading,data})=>{
     const [requiredtemp, setRequiredtemp] = useState("")
     const [vanbox, setVanBox] = useState("")
     const [boxvolume, setBoxvolume] = useState("")
+    const [viewmore, setviewmore] = useState(false)
     const Cart = (data)=>{
         
        setOpen(true);
@@ -246,11 +247,29 @@ const Specification = ({loading,data})=>{
                 :<div><h3>No Product Found</h3></div>}
 
             </div>
-        {data && data.length > 6 ? <div className="viewmore_cover">
+        {data && data.length > 6 ? <div className="viewmore_cover" onClick={()=>{setviewmore(true)}}>
             <div className="viewmore_btn">View More</div>
         </div>
         :null}
-
+        {viewmore && 
+                data.map((d)=>{
+                   return  <div className="DivCard" style={{ flex: '0 0 30%',marginBottom:20}}>
+                                <Image src={Image2} className="DivCardImage" />
+                                <div className="productTitle">
+                                    <div >
+                                        {d.product_name}
+                                    </div>
+                                    <div>
+                                        <div className="circular" onClick={()=>{Cart(d);}}>
+                                            <Image src={AddToCart} style={{width:10,height:10}} />
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div className="viewdetails_btn">View Details</div>
+                            </div> 
+                })
+            }
         </div>
         
     )
