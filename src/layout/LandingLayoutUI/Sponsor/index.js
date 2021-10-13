@@ -1,9 +1,9 @@
 import React from 'react';
 import { Carousel, Image } from 'react-bootstrap';
 // import Image1 from '../../../assets/images/sponsor/toyota.png'
-import Image1 from '../../../assets/images/sponsor/Lambretta.jpg'
-import Image2 from '../../../assets/images/sponsor/suzuki-logo.png'
-import Image3 from '../../../assets/images/sponsor/avic.jfif'
+import lamberet from '../../../assets/images/sponsor/lamberet.png'
+import jincheng from '../../../assets/images/sponsor/jincheng.png'
+import xfzyc from '../../../assets/images/sponsor/xfzyc.png'
 import { CaretLeftFill,CaretRightFill } from 'react-bootstrap-icons';
 import { Header } from 'semantic-ui-react';
 
@@ -17,7 +17,15 @@ const index = ()=>{
                     
                      
                     <div>
-                        <Image src={Image1} className="sponsor-item"  style={{width:200}}/>
+                        <Image src={lamberet} className="sponsor-item"  style={{width:200}}/>
+                    
+                    </div>
+                    <div>
+                        <Image src={jincheng} className="sponsor-item"  style={{width:200}}/>
+                    
+                    </div>
+                    <div>
+                        <Image src={xfzyc} className="sponsor-item"  style={{width:200}}/>
                     
                     </div>
                     
