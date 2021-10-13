@@ -11,12 +11,16 @@ import { GlobalContext } from "../../../context/Provider";
 import { Modal, Button , Image as SemanticImage, Header, Select,Dropdown,Card,Placeholder} from 'semantic-ui-react';
 import subcategoryList from "../../../context/reducers/subcategorylist";
 import modalList from "../../../context/actions/category/modalList";
-
+import addToCart from "../../../context/actions/category/addToCart";
+import Swal from "sweetalert2";
+import updateSuccess from "../../../context/actions/category/updateSuccess";
 const Specification = ({loading,data})=>{
     const {subcategoryListState,subcategoryListDispatch} = useContext(GlobalContext)
+    const {cartState,cartDispatch} = useContext(GlobalContext)
     const {modalListdata:{modal_loading}} = subcategoryListState
     const {modalListdata:{modal_data}} = subcategoryListState
-    console.log('modal_loading',modal_data)
+    
+    const {cart:{success}} = cartState
     const [open, setOpen] = useState(false)
     const [modalData, setModalData] = useState({})
     const [chooseApplicationState, setChooseApplication] = useState([])
@@ -29,9 +33,10 @@ const Specification = ({loading,data})=>{
     const [viewmore, setviewmore] = useState(false);
     const [display, setdisplay]= useState('flex');
     const [viewmoredisplay, setviewmoredisplay] = useState('flex');
+    const [DisabledBTN,setDisabledBTN] =  useState(true);
    
-
-    console.log('display',display)
+    console.log('cartState',cartState)
+   
     const Cart = (data)=>{
         
        setOpen(true);
@@ -64,7 +69,38 @@ const Specification = ({loading,data})=>{
             return { key: index, text: x.sub_category_name, value: x.sub_category_name };
           }))
         }
-    },[modal_data])
+
+        console.log('Suucess',success)
+            if(success){
+                setChoose("");
+                setsubapplication("");
+                setRequiredtemp("");
+                setVanBox("");
+                setBoxvolume("")
+                setOpen(false);
+                
+                Swal.fire({
+                    title: 'Specification Added To Cart',
+                    text: "Click on View to check your cart",
+                    icon: 'success',
+                    showCancelButton: true,
+                    confirmButtonColor: '#064269',
+                    cancelButtonColor: '#e6e6e6',
+                    confirmButtonText: 'View Cart'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                    //   Swal.fire(
+                    //     'Deleted!',
+                    //     'Your file has been deleted.',
+                    //     'success'
+                    //   )
+
+                    }
+                  })
+                  updateSuccess()(cartDispatch)
+                  
+            }
+    },[modal_data,success])
 
 
 
@@ -99,8 +135,27 @@ const Specification = ({loading,data})=>{
             // }))
         });
     }
+    const saveToCart = ()=>{
 
+        if(modalData.product_name && modalData.category_name && choose && choosesubapplication && requiredtemp && vanbox && boxvolume ){
+            const items = {
+                product_category:modalData.product_name,
+                product_category:modalData.category_name,
+                application:choose,
+                subapplication:choosesubapplication,
+                requiredtemp:requiredtemp,
+                vanbox:vanbox,
+                boxvolume:boxvolume
+            }
+            
+            addToCart(items)(cartDispatch)
+            
+        }
+        
+    }
     const {value} = chooseApplicationState;
+
+
 
     return(
 
@@ -180,10 +235,11 @@ const Specification = ({loading,data})=>{
                                         Cancel
                                     </Button>
                                     <Button
+                                    
                                     content="Save Order"
                                     labelPosition='right'
                                     icon='checkmark'
-                                    onClick={() => setOpen(false)}
+                                    onClick={()=>{saveToCart()}}
                                     positive
                                     />
                                 </div>
@@ -267,7 +323,7 @@ const Specification = ({loading,data})=>{
                                     </div>
                                     <div>
                                         <div className="circular" onClick={()=>{Cart(d);}}>
-                                            <Image src={AddToCart} style={{width:10,height:10}} />
+                                            <Image src={AddToCart} style={{width:10,height:10}} /> 
                                         </div>
                                     </div>
                                     
