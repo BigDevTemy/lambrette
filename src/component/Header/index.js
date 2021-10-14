@@ -11,7 +11,7 @@ import {GlobalContext} from '../../context/Provider';
 import '../../assets/css/main.css'
 const Header = ({store})=>{
     const{cartState,cartDispatch} = useContext(GlobalContext);
-    console.log('StoreHeader',store)
+    
 
     return(
         <div>
@@ -48,16 +48,15 @@ const Header = ({store})=>{
                     </div>
                     <div>
                         <Link to="/boulos/view/cart">
-                            {/* <div>
-                            <Image src={cart}  className="cart"/>
-                            
-                            </div> */}
+                        
                             <Menu compact>
                                 <Menu.Item as='a'>
                                 <Icon name='cart' /> 
-                                <Label color='red' floating>
-                                    {localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0 ? JSON.parse(localStorage.getItem('cart')).length : '0' }
-                                </Label>
+                                {localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0 ?  <Label color='red' floating>
+                                    {store && store.length }
+                                    {!store && localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0 ? JSON.parse(localStorage.getItem('cart')).length : null }
+                                </Label> :null}
+                               
                                 </Menu.Item>
                             </Menu>
                             
