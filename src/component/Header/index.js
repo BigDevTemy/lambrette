@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar,Container,Nav } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
@@ -6,8 +6,13 @@ import logo from '../../assets/images/logo.png'
 import cart from '../../assets/images/cart.png'
 import Image from 'react-bootstrap/Image'
 import { List } from 'react-bootstrap-icons';
+import { Menu,Icon,Label } from "semantic-ui-react";
+import {GlobalContext} from '../../context/Provider';
 import '../../assets/css/main.css'
 const Header = ()=>{
+    const{cartState,cartDispatch} = useContext(GlobalContext);
+    console.log('cartStateHeader',cartState)
+    const {cart:{cart_data}} = cartState
     return(
         <div>
             <div className="mynav">
@@ -41,7 +46,24 @@ const Header = ()=>{
                             
                         </div>
                     </div>
-                    <div><Image src={cart}  className="cart"/></div>
+                    <div>
+                        <Link to="/boulos/view/cart">
+                            {/* <div>
+                            <Image src={cart}  className="cart"/>
+                            
+                            </div> */}
+                            <Menu compact>
+                                <Menu.Item as='a'>
+                                <Icon name='cart' /> 
+                                <Label color='red' floating>
+                                    {cart_data.length}
+                                </Label>
+                                </Menu.Item>
+                            </Menu>
+                            
+                        </Link>
+                    </div>
+
                 </div>
                 <div className="menu"><List color="black" size={30} /></div>
             </div>

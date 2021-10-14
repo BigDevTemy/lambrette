@@ -192,7 +192,7 @@ a:hover{
 }
 .ourproducts{
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     background: #f1f5f9 ;
     text-align: left;
     padding: 40px;
@@ -534,7 +534,85 @@ a:hover{
 .leverageClass{
     margin-top:50px
 }
+.cartMainDiv{
+    background:#f1f5f9;
+    width:100%;
+    min-height:100vh;
+    height:100%;
 
+}
+.cartui{
+    width:70%;
+    height: 100%;
+    margin: auto;
+    margin-top: 30px;
+
+}
+.cartUI-nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.h1-cart{
+    color:#1B5174;
+}
+.imgCart{
+    width:100%
+}
+.shopping{
+    line-height:5;
+    cursor:pointer
+}
+
+.cancelbtn{
+    width:150px;
+    height:50px;
+    border-radius:25px;
+    background:#8C0606;
+    cursor:pointer;
+    color:#fff;
+    text-align: center;
+    line-height:3
+}
+
+.confirmbtn{
+    width:150px;
+    height:50px;
+    border-radius:25px;
+    background:#1B7449;
+    cursor:pointer;
+    color:#fff;
+    text-align: center;
+    line-height:3
+}
+.divbtn{
+    display:flex;
+    width: 100%;
+    text-align: right;
+    justify-content: end;
+    margin-top:30px;
+}
+.product_display{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px
+}
+.product_display_img{
+    width:15%
+}
+.product_display_name_div{
+    width:100%;
+    text-align:left
+}
+.product_display_name{
+    line-height:10;
+    margin-left:20px
+}
+.close{
+    line-height:10;
+    margin-right:10px;
+    cursor:pointer
+}
 @media screen and (max-width: 900px) {
     .containerProducts{
         flex-direction: column;
@@ -543,6 +621,9 @@ a:hover{
         align-items: center;
        
         
+    }
+    .product_display_img{
+        width: 50%;
     }
     .ourproducts{
         position: relative;

@@ -4,6 +4,7 @@ import React from 'react'
  import PrefabricatedComponent from '../container/PrefabricatedContainer'
  import LandingComponent from '../container/LandingContainer'
  import MakeOrder from '../container/MakeOrder'
+ import Cart from '../container/Cart'
 const routes = [
     {
         path:"/boulos/insulation/panel",
@@ -30,6 +31,11 @@ const routes = [
         path:"/boulos/makeorder",
         component:MakeOrder,
         title:'Make Order'
+    },
+    {
+        path:"/boulos/view/cart",
+        component:Cart,
+        title:'Cart'
     }
 ]
 

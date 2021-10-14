@@ -34,9 +34,8 @@ const Specification = ({loading,data})=>{
     const [display, setdisplay]= useState('flex');
     const [viewmoredisplay, setviewmoredisplay] = useState('flex');
     const [DisabledBTN,setDisabledBTN] =  useState(true);
-   
-    console.log('cartState',cartState)
-   
+    const [mycartItems, setmycartItems] = useState([]);
+    const localstore = localStorage.getItem('cart');
     const Cart = (data)=>{
         
        setOpen(true);
@@ -44,7 +43,7 @@ const Specification = ({loading,data})=>{
        modalList(data)(subcategoryListDispatch)
     }
     useEffect(()=>{
-        
+        //localStorage.removeItem('cart');
         switch(modalData.product_name){
             case "LK-180/LK-200":
                 setBoxvolume('3~6');
@@ -139,7 +138,7 @@ const Specification = ({loading,data})=>{
 
         if(modalData.product_name && modalData.category_name && choose && choosesubapplication && requiredtemp && vanbox && boxvolume ){
             const items = {
-                product_category:modalData.product_name,
+                product_name:modalData.product_name,
                 product_category:modalData.category_name,
                 application:choose,
                 subapplication:choosesubapplication,
@@ -147,8 +146,34 @@ const Specification = ({loading,data})=>{
                 vanbox:vanbox,
                 boxvolume:boxvolume
             }
+
+            // if(localstore){
+            //     console.log('Exist')
+            //     // console.log('localStore',localstore)
+            //     // const getInitialItem = JSON.parse(localstore);
+            //     // setmycartItems(getInitialItem);
+            //     // let cartCopy = [...mycartItems];
+            //     // cartCopy.push(items);
+            //     // setmycartItems(cartCopy);
+            //     // localStorage.setItem('cart',cartCopy);
+            //     // console.log('Store',localstore);
+            // }
+            // else{
+            //     console.log('Created')
+            //     // localStorage.setItem('cart',JSON.stringify(items));
+            //     // console.log('Fresh Start')
+            //     // console.log('Store',localstore)
+            // }
+            // // setmycartItems(items);
+            // //console.log('manipulate',mycartItems);
+            // // addToCart(items)(cartDispatch)
             
+            // // localStorage.setItem('cart',JSON.stringify(items))
+
+
             addToCart(items)(cartDispatch)
+
+
             
         }
         
