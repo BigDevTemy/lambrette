@@ -1,25 +1,47 @@
 import React, { useContext, useEffect,useState } from "react";
-import { Link } from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
 import image4 from '../../assets/images/ourproducts/1.png'
 import { Icon, Image } from "semantic-ui-react";
 import { GlobalContext } from "../../context/Provider";
+import { useHistory } from "react-router";
+import cart from "../../context/reducers/cart";
 // import 'bootstrap/dist/css/bootstrap.min.css';
-const CartUI = ()=>{
+const CartUI = ({currentCart})=>{
     const {cartState,cartDispatch} = useContext(GlobalContext)
     const {cart:{cart_data}} = cartState
-   console.log('cartPageI',cart_data)
-   const [cartStore,setCartStore] = useLocalStorage('cart',cart_data)
-    
+    // const [cartStore,setCartStore] =  useLocalStorage('cart',cart_data);
+    //const  cart = localStorage.getItem("cart");
+    //const pcart = JSON.parse(cart) != null ? JSON.parse(cart) : [];
+    const history = useHistory()
+    const localstorageVar = localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0 ? JSON.parse(localStorage.getItem('cart')):[];
+    const [store,setStore] = useState([]);
+    currentCart(store)
+    useEffect(()=>{
+        // localStorage.removeItem('cart')
+        if(localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0){
+            setStore(JSON.parse(localStorage.getItem('cart')))
+               
+        }
+    },[])
+
+    const deleteItem = (pname)=>{
+        
+         const newitems = localstorageVar.filter(x=>x.product_name != pname)
+         localStorage.setItem('cart',JSON.stringify(newitems))
+        setStore(store.filter(x=> x.product_name != pname));
+        currentCart(store)
+    }
     return(
         <div className="cartui">
             <div className="cartUI-nav">
                 <div><h1 className="h1-cart" >Your Cart</h1></div>
-                <div className="h1-cart shopping" >Continue Shopping</div>
+                <div className="h1-cart shopping" onClick={()=>{history.goBack()}} >Continue Shopping</div>
             </div>
             <hr/>
             <div>
-                {cartStore && cartStore.length > 0 ? 
-                cartStore.map((x)=>{
+                { store.length > 0 ? 
+                    store.map((x)=>{
+                    
                    return <div>
                         <div className="product_display">
                             <div className="product_display_img">
@@ -31,9 +53,21 @@ const CartUI = ()=>{
                             
                             <div className="product_display_name_div">
                                 <h5 className="product_display_name">{x.product_name}</h5>
+                                <div className="list">
+                                    <li>{x.product_category}</li>
+                                    <li>{x.application}</li>
+                                    <li>{x.subapplication}</li>
+                                    <li>{x.subapplication}</li>
+                                    <li>{x.requiredtemp}</li>
+                                    <li>{x.vanbox}</li>
+                                    <li>{x.boxvolume}</li>
+
+                                </div>
+                                    
                             </div>
+                            
                             <div>
-                            <h5 className="close"><Icon name='close' /> </h5>
+                            <h5 className="close" onClick={()=>{deleteItem(x.product_name)}}><Icon name='close' /> </h5>
                             </div>
                             
                         </div>
@@ -83,7 +117,7 @@ const CartUI = ()=>{
                     
                 </div>
                 <hr/> */}
-                {cart_data && cart_data.length > 0 ? 
+                { store.length > 0  ? 
                     <div className="divbtn">
                         <div className="cancelbtn">Cancel</div>
                         <div  className="confirmbtn">Confirm</div>
@@ -100,13 +134,24 @@ const CartUI = ()=>{
 function useLocalStorage(key, initialValue) {
     // State to store our value
     // Pass initial state function to useState so logic is only executed once
+    console.log('InitialValue',initialValue)
     const [storedValue, setStoredValue] = useState(() => {
       try {
         // Get from local storage by key
-        const item = window.localStorage.getItem(key);
+        
         // Parse stored json or if none return initialValue
-       
-        return item ? JSON.parse(item) : initialValue;
+    //    console.log('item',item ? JSON.parse(item) : initialValue)
+        if(initialValue.length > 0){
+            const item = window.localStorage.getItem(key);
+            console.log('Here')
+            return item ? JSON.parse(item) : initialValue;
+        }
+        else{
+            console.log('Refreshed/Emptied')
+            console.log('key',key)
+            return JSON.parse(window.localStorage.getItem(key));
+        }
+        
       } catch (error) {
         // If error also return initialValue
         console.log(error);
@@ -116,6 +161,7 @@ function useLocalStorage(key, initialValue) {
     // Return a wrapped version of useState's setter function that ...
     // ... persists the new value to localStorage.
     const setValue = (value) => {
+        console.log('setValue',value)
       try {
         // Allow value to be a function so we have same API as useState
         const valueToStore =

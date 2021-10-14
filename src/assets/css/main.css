@@ -546,6 +546,7 @@ a:hover{
     height: 100%;
     margin: auto;
     margin-top: 30px;
+    padding:30px;
 
 }
 .cartUI-nav{
@@ -602,10 +603,15 @@ a:hover{
 }
 .product_display_name_div{
     width:100%;
-    text-align:left
+    text-align:left;
+    
+    
+}
+.list{
+    margin-left: 20px ;
 }
 .product_display_name{
-    line-height:10;
+    
     margin-left:20px
 }
 .close{

@@ -35,7 +35,10 @@ const Specification = ({loading,data})=>{
     const [viewmoredisplay, setviewmoredisplay] = useState('flex');
     const [DisabledBTN,setDisabledBTN] =  useState(true);
     const [mycartItems, setmycartItems] = useState([]);
-    const localstore = localStorage.getItem('cart');
+    
+    const  cart = localStorage.getItem("cart");
+    const pcart = JSON.parse(cart) != null ? JSON.parse(cart) : [];
+
     const Cart = (data)=>{
         
        setOpen(true);
@@ -146,30 +149,23 @@ const Specification = ({loading,data})=>{
                 vanbox:vanbox,
                 boxvolume:boxvolume
             }
-
-            // if(localstore){
-            //     console.log('Exist')
-            //     // console.log('localStore',localstore)
-            //     // const getInitialItem = JSON.parse(localstore);
-            //     // setmycartItems(getInitialItem);
-            //     // let cartCopy = [...mycartItems];
-            //     // cartCopy.push(items);
-            //     // setmycartItems(cartCopy);
-            //     // localStorage.setItem('cart',cartCopy);
-            //     // console.log('Store',localstore);
-            // }
-            // else{
-            //     console.log('Created')
-            //     // localStorage.setItem('cart',JSON.stringify(items));
-            //     // console.log('Fresh Start')
-            //     // console.log('Store',localstore)
-            // }
-            // // setmycartItems(items);
-            // //console.log('manipulate',mycartItems);
-            // // addToCart(items)(cartDispatch)
             
-            // // localStorage.setItem('cart',JSON.stringify(items))
-
+                if(!localStorage.getItem('cart')){
+                    pcart.push(items)
+                    localStorage.setItem('cart',JSON.stringify(pcart))
+                    console.log('local',localStorage.getItem('cart'))
+                }
+                else{
+                    
+                    var oldItems = JSON.parse(localStorage.getItem('cart'));
+                    oldItems.push(items);
+                    // console.log('oldItems',oldItems)
+                    localStorage.setItem('cart', JSON.stringify(oldItems));
+                    console.log('local',localStorage.getItem('cart'))
+                }
+            
+             
+            
 
             addToCart(items)(cartDispatch)
 

@@ -9,10 +9,10 @@ import { List } from 'react-bootstrap-icons';
 import { Menu,Icon,Label } from "semantic-ui-react";
 import {GlobalContext} from '../../context/Provider';
 import '../../assets/css/main.css'
-const Header = ()=>{
+const Header = ({store})=>{
     const{cartState,cartDispatch} = useContext(GlobalContext);
-    console.log('cartStateHeader',cartState)
-    const {cart:{cart_data}} = cartState
+    console.log('StoreHeader',store)
+
     return(
         <div>
             <div className="mynav">
@@ -56,7 +56,7 @@ const Header = ()=>{
                                 <Menu.Item as='a'>
                                 <Icon name='cart' /> 
                                 <Label color='red' floating>
-                                    {cart_data.length}
+                                    {localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0 ? JSON.parse(localStorage.getItem('cart')).length : '0' }
                                 </Label>
                                 </Menu.Item>
                             </Menu>
