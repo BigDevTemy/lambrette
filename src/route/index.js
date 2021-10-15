@@ -5,6 +5,7 @@ import React from 'react'
  import LandingComponent from '../container/LandingContainer'
  import MakeOrder from '../container/MakeOrder'
  import Cart from '../container/Cart'
+ import ViewDetails from '../container/ViewDetails'
 const routes = [
     {
         path:"/boulos/insulation/panel",
@@ -36,6 +37,11 @@ const routes = [
         path:"/boulos/view/cart",
         component:Cart,
         title:'Cart'
+    },
+    {
+        path:"/boulos/view/details",
+        component:ViewDetails,
+        title:'Product Details'
     }
 ]
 

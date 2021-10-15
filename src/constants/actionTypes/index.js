@@ -9,3 +9,4 @@ export const MODAL_LIST_SUCCESS = "MODAL_LIST_SUCCESS";
 export const MODAL_LIST_ERROR = "MODAL_LIST_ERROR";
 export const ADD_TO_CART = "ADD TO CART";
 export const UPDATE_SUCCESS = "UPDATE_SUCCESS"
+export const CLEAR_CART = "CLEAR_CART"

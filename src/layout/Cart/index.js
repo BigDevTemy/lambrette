@@ -1,10 +1,12 @@
 import React, { useContext, useEffect,useState } from "react";
 import { Link } from "react-router-dom";
 import image4 from '../../assets/images/ourproducts/1.png'
-import { Icon, Image } from "semantic-ui-react";
+import { Icon, Image ,Modal,Form,Button,Input} from "semantic-ui-react";
 import { GlobalContext } from "../../context/Provider";
 import { useHistory } from "react-router";
 import cart from "../../context/reducers/cart";
+import Swal from "sweetalert2";
+import clearcart from "../../context/actions/category/clearcart";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 const CartUI = ({currentCart})=>{
     const {cartState,cartDispatch} = useContext(GlobalContext)
@@ -15,6 +17,11 @@ const CartUI = ({currentCart})=>{
     const history = useHistory()
     const localstorageVar = localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0 ? JSON.parse(localStorage.getItem('cart')):[];
     const [store,setStore] = useState([]);
+    const [open,setOpen] =useState(false)
+    const[fname,setfname]=useState();
+    const[lname,setlname]=useState();
+    const[email,setemail]=useState();
+    const[phonenumber,setphonenumber]=useState();
     currentCart(store)
     useEffect(()=>{
         // localStorage.removeItem('cart')
@@ -31,8 +38,73 @@ const CartUI = ({currentCart})=>{
         setStore(store.filter(x=> x.product_name != pname));
         currentCart(store)
     }
+    const handlefname =(e)=>{
+        setfname(e.target.value)
+    }
+    const handlelname =(e)=>{
+        setlname(e.target.value)
+    }
+    const handleemail =(e)=>{
+        setemail(e.target.value)
+    }
+    const handlephonenumber =(e)=>{
+        setphonenumber(e.target.value)
+    }
+    const sendMail=()=>{
+        const contact = {
+            fname:fname,
+            lname:lname,
+            email:email,
+            phonenumber:phonenumber
+        }
+        const data = [store,contact];
+        clearcart()(cartDispatch)
+        localStorage.removeItem('cart')
+        console.log(data);
+        
+        setOpen(false);
+        Swal.fire(
+            'Order Successfully Sent!',
+            'You will get a callback from Our Marketing Team!',
+            'success'
+          )
+          history.push('/boulos/exhibition');
+    }
     return(
         <div className="cartui">
+             <Modal
+                onClose={() => setOpen(false)}
+                onOpen={() => setOpen(true)}
+                open={open}
+                >
+                    <Modal.Header>Contact Form</Modal.Header>
+                    <Modal.Content image>
+                        <Image size='medium' src='https://react.semantic-ui.com/images/wireframe/image-square.png' wrapped />
+                        <Modal.Description style={{width:'100%',marginTop:0}}>
+                        <Form>
+                            <Form.Field>
+                            <label>First Name</label>
+                            <input placeholder='First Name' onChange={handlefname} required value={fname} />
+                            </Form.Field>
+                            <Form.Field>
+                            <label>Last Name</label>
+                            <input placeholder='Last Name' required onChange={handlelname}  value={lname}/>
+                            </Form.Field>
+                            <Form.Field>
+                                 <label>Email Address</label>
+                                <input type="email" placeholder='Email Address' onChange={handleemail} value={email} required />
+                            </Form.Field>
+                            <Form.Field>
+                                 <label>PhoneNumber</label>
+                                <input type="number" placeholder='PhoneNumber' onChange={handlephonenumber} required />
+                            </Form.Field>
+                            <Button type='submit' positive onClick={()=>{sendMail()}}>Submit</Button>
+                            <Button onClick={() => setOpen(false)}>Cancel</Button>
+                        </Form>
+                        </Modal.Description>
+                    </Modal.Content>
+                   
+               </Modal>
             <div className="cartUI-nav">
                 <div><h1 className="h1-cart" >Your Cart</h1></div>
                 <div className="h1-cart shopping" onClick={()=>{history.goBack()}} >Continue Shopping</div>
@@ -46,7 +118,7 @@ const CartUI = ({currentCart})=>{
                         <div className="product_display">
                             <div className="product_display_img">
                                 <Image
-                                    src={image4}
+                                    src={`https://boulos.ng/lamberet/products/${x.imageurl}`}
                                     className="imgCart"
                                 />
                             </div>
@@ -82,45 +154,10 @@ const CartUI = ({currentCart})=>{
                 :<h1>NO ITEM IN CART</h1>}
 
 
-{/* 
-                <div className="product_display">
-                    <div className="product_display_img">
-                        <Image
-                            src={image4}
-                            className="imgCart"
-                        />
-                    </div>
-                    
-                    <div className="product_display_name_div">
-                         <h5 className="product_display_name">LK-180/200</h5>
-                    </div>
-                    <div>
-                    <h5 className="close">X</h5>
-                    </div>
-                    
-                </div>
-                <hr/>
-                <div className="product_display">
-                    <div className="product_display_img">
-                        <Image
-                            src={image4}
-                            className="imgCart"
-                        />
-                    </div>
-                    
-                    <div className="product_display_name_div">
-                         <h5 className="product_display_name">LK-580</h5>
-                    </div>
-                    <div>
-                    <h5 className="close">X</h5>
-                    </div>
-                    
-                </div>
-                <hr/> */}
+
                 { store.length > 0  ? 
-                    <div className="divbtn">
-                        <div className="cancelbtn">Cancel</div>
-                        <div  className="confirmbtn">Confirm</div>
+                    <div className="divbtn"> 
+                        <div  className="confirmbtn" onClick={()=>{setOpen(true)}}>Send Order</div>
                     </div>:
                 null}
                 

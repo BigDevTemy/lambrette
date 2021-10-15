@@ -1,4 +1,4 @@
-import { ADD_TO_CART,UPDATE_SUCCESS } from "../../constants/actionTypes";
+import { ADD_TO_CART,CLEAR_CART,UPDATE_SUCCESS } from "../../constants/actionTypes";
 import React from "react";
 const cart =(state,{payload,type})=>{
     switch(type){
@@ -18,6 +18,15 @@ const cart =(state,{payload,type})=>{
                 ...state,
                 cart:{
                     ...state.cart,
+                    success:false
+                }
+            }
+        case CLEAR_CART:
+            return{
+                ...state,
+                cart:{
+                    ...state.cart,
+                    cart_data:null,
                     success:false
                 }
             }

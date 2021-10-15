@@ -20,7 +20,7 @@ export default(data)=>(dispatch)=>{
         })
     })
     .catch((err)=>{
-        console.log('err',err);
+        console.log('err',err.reponse.data);
         dispatch({
             type:MODAL_LIST_ERROR,
             payload:err.reponse ? err.response.data : 'CONNECTION ERROR'

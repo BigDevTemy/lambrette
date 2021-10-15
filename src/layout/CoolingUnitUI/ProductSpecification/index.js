@@ -15,6 +15,7 @@ import addToCart from "../../../context/actions/category/addToCart";
 import Swal from "sweetalert2";
 import updateSuccess from "../../../context/actions/category/updateSuccess";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 const Specification = ({loading,data})=>{
     const {subcategoryListState,subcategoryListDispatch} = useContext(GlobalContext)
     const {cartState,cartDispatch} = useContext(GlobalContext)
@@ -43,7 +44,8 @@ const Specification = ({loading,data})=>{
     const Cart = (data)=>{
         const items = {
             product_name:data.product_name,
-            product_category:data.category_name
+            product_category:data.category_name,
+            imageurl:data.image_url
         }
         if(!localStorage.getItem('cart')){
             pcart.push(items)
@@ -116,7 +118,9 @@ const Specification = ({loading,data})=>{
     }
     const {value} = chooseApplicationState;
 
-
+    const view_details = (Details)=>{
+        console.log('view Details',Details)
+    }
 
     return(
 
@@ -163,7 +167,7 @@ const Specification = ({loading,data})=>{
             <div style={{display:display,flexWrap:'wrap',justifyContent:'space-between'}}>
                 {data && data.length > 0 ? data.slice(0,6).map((d)=>{
                    return  <div className="DivCard" style={{ flex: '0 0 30%',marginBottom:20}}>
-                                <Image src={Image3} className="DivCardImage" />
+                                <Image src={`https://boulos.ng/lamberet/coolingunit/${d.image_url}`} className="DivCardImage" />
                                 <div className="productTitle">
                                     <div >
                                         {d.product_name}
@@ -175,7 +179,7 @@ const Specification = ({loading,data})=>{
                                     </div>
                                     
                                 </div>
-                                <div className="viewdetails_btn" onClick={()=>{Cart(d);}}>View Details</div>
+                                <div className="viewdetails_btn"><Link to={{ pathname: "/boulos/view/details", state: { fromDashboard: d }}} style={{color:'#fff'}}>View Details</Link></div>
                             </div> 
                 }) 
                 :<div><h3>No Product Found</h3></div>}
@@ -201,7 +205,7 @@ const Specification = ({loading,data})=>{
                                     </div>
                                     
                                 </div>
-                                <div className="viewdetails_btn">View Details</div>
+                                <div className="viewdetails_btn" onClick={()=>{view_details(d)}}>View Details</div>
                             </div> 
                 })
             }

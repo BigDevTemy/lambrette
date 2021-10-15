@@ -192,9 +192,10 @@ a:hover{
 }
 .ourproducts{
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     background: #f1f5f9 ;
     text-align: left;
+    
     padding: 40px;
 }
 .ourproducts >h1{
@@ -206,6 +207,9 @@ a:hover{
     justify-content: space-between;
     margin-top: 30px;
     flex-wrap: wrap;
+    margin:auto;
+    padding: 20px;
+    
     
     
 }
@@ -245,7 +249,7 @@ a:hover{
 
 .catergoryDIV{
     
-    width: 25%;
+    width: 30%;
     box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.4);
     border-radius: 20px;
     
@@ -314,14 +318,45 @@ a:hover{
     padding-left: 30px;
     padding-top: 30vh;
 }
+.cooling-details{
+    width: 100%;
+    height: 50vh;
+    background: url('../images/banner/cool-description.png');
+    text-align: left;
+    color: #fff;
+    padding-left: 30px;
+    padding-top: 30vh;
+}
 .description{
     text-align: left;
     display: flex;
     margin-top: 10%;
     justify-content: space-between;
-    width: 100%;
-    
-    
+    width: 100%;  
+}
+.description-details{
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;  
+    margin-left: 20px;
+    min-height: 50vh;
+    padding:20px;
+}
+.description-details-title{
+    padding: 20px;
+    text-align: left;
+
+}
+.description-details-title > h1{
+    font-weight: bolder;
+    color: #1B5174;
+
+}
+.des-details{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .imageDiv_fab_desc{
     display: flex;    
@@ -430,6 +465,16 @@ a:hover{
     padding: 20px;
     width: 23%;
     
+}
+.containText{
+   width:100%;
+   margin:10px;
+}
+.content{
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    font-weight: bolder;
 }
 
 .mainDiv{
@@ -646,12 +691,23 @@ a:hover{
     border: 1px solid #000;
 }
 @media screen and (max-width: 900px) {
+    .description-details{
+        justify-content:center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .contentDIV{
+        width: 100%;
+        margin: auto;
+    }
+    
     .containerProducts{
         flex-direction: column;
         text-align: center;
         justify-content: center;
-        align-items: center;
-       
+        align-items: center; 
         
     }
     .product_display_img{
@@ -659,6 +715,9 @@ a:hover{
     }
     .ourproducts{
         position: relative;
+        height: 100%;
+        
+        margin-bottom: 0px;
     }
     .catergoryDIV{
         width:80%;
@@ -695,9 +754,7 @@ a:hover{
     .demoImageDiv{
         margin-top: 25vh
     }
-    .sponsor{
-        margin-top: 80vh;
-    }
+    
     
     .landingUIDiv{
         height: 55vh;
