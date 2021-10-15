@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Navbar,Container,Nav } from "react-bootstrap";
 
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 import logo from '../../assets/images/logo.png'
 import cart from '../../assets/images/cart.png'
 import Image from 'react-bootstrap/Image'
@@ -11,12 +11,14 @@ import {GlobalContext} from '../../context/Provider';
 import '../../assets/css/main.css'
 const Header = ({store})=>{
     const{cartState,cartDispatch} = useContext(GlobalContext);
-    
-
+    const location = useLocation();
+    const locationHash=()=>{
+        window.location="https://boulos.ng";
+    }
     return(
         <div>
             <div className="mynav">
-                <div className="brandDiv"><Image src={logo} className="logo"/></div>
+                <div className="brandDiv" style={{cursor:'pointer'}} onClick={()=>{locationHash()}}><Image src={logo} className="logo"/></div>
                 <div className="navItems">
                    
                     <div class="dropdown">

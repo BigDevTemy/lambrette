@@ -193,7 +193,7 @@ const Specification = ({loading,data})=>{
         {viewmore && 
                 data.map((d)=>{
                    return  <div className="DivCard" style={{ flex: '0 0 30%',marginBottom:20}}>
-                                <Image src={Image2} className="DivCardImage" />
+                                <Image src={`https://boulos.ng/lamberet/coolingunit/${d.image_url}`} className="DivCardImage" />
                                 <div className="productTitle">
                                     <div >
                                         {d.product_name}
