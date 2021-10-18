@@ -9,8 +9,10 @@ import Swal from "sweetalert2";
 import clearcart from "../../context/actions/category/clearcart";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 const CartUI = ({currentCart})=>{
-    const {cartState,cartDispatch} = useContext(GlobalContext)
-    const {cart:{cart_data}} = cartState
+    const {cartState,cartDispatch} = useContext(GlobalContext);
+    const {cart:{cart_data}} = cartState;
+    const {cart:{save_loader}} = cartState;
+    const {cart:{error}} = cartState;
     // const [cartStore,setCartStore] =  useLocalStorage('cart',cart_data);
     //const  cart = localStorage.getItem("cart");
     //const pcart = JSON.parse(cart) != null ? JSON.parse(cart) : [];
@@ -29,7 +31,14 @@ const CartUI = ({currentCart})=>{
             setStore(JSON.parse(localStorage.getItem('cart')))
                
         }
-    },[])
+        if(error && error.length >0){
+            Swal.fire(
+                'An Error Occurred',
+                error,
+                'error'
+              )
+        }
+    },[error])
 
     const deleteItem = (pname)=>{
         
@@ -58,10 +67,9 @@ const CartUI = ({currentCart})=>{
             phonenumber:phonenumber
         }
         const data = [store,contact];
-        clearcart()(cartDispatch)
+        clearcart(data)(cartDispatch)
         localStorage.removeItem('cart')
-        console.log(data);
-        
+
         setOpen(false);
         Swal.fire(
             'Order Successfully Sent!',
@@ -98,7 +106,7 @@ const CartUI = ({currentCart})=>{
                                  <label>PhoneNumber</label>
                                 <input type="number" placeholder='PhoneNumber' onChange={handlephonenumber} required />
                             </Form.Field>
-                            <Button type='submit' positive onClick={()=>{sendMail()}}>Submit</Button>
+                            <Button type='submit' loading={save_loader} disabled={save_loader} positive onClick={()=>{sendMail()}}>Submit</Button>
                             <Button onClick={() => setOpen(false)}>Cancel</Button>
                         </Form>
                         </Modal.Description>

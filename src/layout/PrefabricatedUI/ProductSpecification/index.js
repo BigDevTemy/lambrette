@@ -232,15 +232,15 @@ const Specification = ({loading,data})=>{
                     <Modal.Header>Make Order</Modal.Header>
                     <Modal.Content>
                         <div style={{display:'flex',justifyContent:"space-between",padding:10,textAlign:'left'}}>
-                            <div style={{width:'40%'}}>
+                            <div style={{width:'40%'}} className="placeholderImageModal">
                                 {modal_loading && (
-                                     <Placeholder style={{width:'100%',height:'50vh'}}>
+                                     <Placeholder style={{width:'100%',height:'50vh'}} className="placeholderImageModal">
                                         <Placeholder.Image />
                                     </Placeholder>
                                 )}
-                                {!modal_loading && <Image src={Selected1} style={{width:'100%',height:'80%'}} />}
+                                {!modal_loading && <Image src={Selected1} style={{width:'100%',height:'80%'}} className="placeholderImageModal" />}
                             </div>
-                            <div style={{width:'100%'}}>
+                            <div style={{width:'100%'}} className="placeholderDataModal">
                                 <div className="topModal" >
                                     <div>Product Category: {modalData && modalData.category_name}</div>
                                     <div style={{marginTop:10}}>Product Name: {modalData && modalData.product_name}</div>

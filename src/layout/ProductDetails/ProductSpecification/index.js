@@ -5,9 +5,9 @@ import Checked from '../../../assets/images/banner/checked.png'
 const Index =(data)=>{
    const history = useHistory();
     const {details} = data  
-    console.log('Details',details.product_features)
+    console.log(details)
     const features = details.product_features.split("_");
-    console.log(features)
+    
     
     return (
         <div>

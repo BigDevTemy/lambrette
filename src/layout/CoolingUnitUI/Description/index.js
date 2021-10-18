@@ -27,12 +27,12 @@ const Index =()=>{
                         <Table.Cell>Application Temp(C)</Table.Cell>
                         <Table.Cell>Environmental Temp &nbsp; &nbsp; -5~10 <br/><br/> Chamber Temp -22~25</Table.Cell>
                         <Table.Cell>Environmental Temp &nbsp; &nbsp; -5~40 <br/><br/> Chamber Temp -20~25</Table.Cell>
-                        <Table.Cell >Approved</Table.Cell>
-                        <Table.Cell >Approved</Table.Cell>
-                        <Table.Cell >Approved</Table.Cell>
-                        <Table.Cell >Approved</Table.Cell>
-                        <Table.Cell >Approved</Table.Cell>
-                        <Table.Cell >Approved</Table.Cell>
+                        <Table.Cell>Environmental Temp &nbsp; &nbsp; -5~40 <br/><br/> Chamber Temp -20~25</Table.Cell>
+                        <Table.Cell>Environmental Temp &nbsp; &nbsp; -5~40 <br/><br/> Chamber Temp -20~25</Table.Cell>
+                        <Table.Cell>Environmental Temp &nbsp; &nbsp; -5~40 <br/><br/> Chamber Temp -18~25</Table.Cell>
+                        <Table.Cell>Environmental Temp &nbsp; &nbsp; -5~40 <br/><br/> Chamber Temp -20~25</Table.Cell>
+                        <Table.Cell>Environmental Temp &nbsp; &nbsp; -5~40 <br/><br/> Chamber Temp -18~25</Table.Cell>
+                        <Table.Cell>Environmental Temp &nbsp; &nbsp; -5~40 <br/><br/> Chamber Temp -18~25</Table.Cell>
                     </Table.Row>
                     <Table.Row>
                         <Table.Cell>Structure</Table.Cell>

@@ -7,10 +7,7 @@ import Pointer from '../../../assets/images/pointer.png'
 // import insulator from '../../../assets/images/ourproducts/insulator.png'
 import { Link } from "react-router-dom";
 const index = ({loading,data,error})=>{
-    console.log('OurProductLoaderkkk',loading)
-    console.log('OurProductLoaderData',data)
-    console.log('OurProductLoaderDataError',error)
-    data && console.log(data.length)
+    
     return(
         <div className="ourproducts">
             <h1 className="text-align-left">Our Products</h1>

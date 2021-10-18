@@ -10,3 +10,5 @@ export const MODAL_LIST_ERROR = "MODAL_LIST_ERROR";
 export const ADD_TO_CART = "ADD TO CART";
 export const UPDATE_SUCCESS = "UPDATE_SUCCESS"
 export const CLEAR_CART = "CLEAR_CART"
+export const SAVE_LOADER = "SAVE_LOADER"
+export const SAVE_ERROR = "SAVE_ERROR"

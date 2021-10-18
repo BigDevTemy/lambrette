@@ -783,6 +783,7 @@ a:hover{
     
     .listImage{
         flex-direction: column;
+        width: 80%;
     }
     .featureDiv{
         height: 80vh;
@@ -799,8 +800,8 @@ a:hover{
     }
     .description{
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
+        
+        width: 100%;
     }
     .fab_image{
         width: 250px;
@@ -814,5 +815,41 @@ a:hover{
     }
     .more_details{
         font-size: 18px;
+    }
+    .thumbnail_img{
+        width:25%;
+        height: 150px;
+    }
+    .listImage_child{
+        padding: 20px;
+    }
+    .more_details{
+
+        padding-left: 20px;
+        margin-left: 10px;
+        font-size: 18px;
+        align-self: center;    
+    }
+    
+    .more_details > h2{
+        
+        font-size: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        
+    }
+    .description_list{
+        width: 20px;
+        margin-right: 10px;
+       
+    }
+    .title_description{
+        font-size: 16px;
+    }
+    .placeholderImageModal{
+        display: none;
+    }
+    .placeholderDataModal{
+        width:100%;
     }
   }

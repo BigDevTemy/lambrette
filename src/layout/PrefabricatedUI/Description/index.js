@@ -35,11 +35,11 @@ const index = ()=>{
                 <div className="more_details">
                     <h2>Description</h2>
                     <div>
-                        <p>The Prefabricated Cold Chain solution  was tailor made to suit all your cooling needs.</p>
-                        <p><Image src={Checked} className="description_list"/><span>Heat Insulation Factor K=0.33W/m*k</span></p>
-                        <p><Image src={Checked} className="description_list"/><span>Food grade antibacterial material</span></p>
-                        <p><Image src={Checked} className="description_list"/><span>Reduce fuel consumption by 10%</span></p>
-                        <p><Image src={Checked} className="description_list"/><span>Improve transport efficiency by 30%</span></p>
+                        <p className="title_description">The Prefabricated Cold Chain solution  was tailor made to suit all your cooling needs.</p>
+                        <p><Image src={Checked} className="description_list"/><span className="title_description">Heat Insulation Factor K=0.33W/m*k</span></p>
+                        <p><Image src={Checked} className="description_list"/><span className="title_description">Food grade antibacterial material</span></p>
+                        <p><Image src={Checked} className="description_list"/><span className="title_description">Reduce fuel consumption by 10%</span></p>
+                        <p><Image src={Checked} className="description_list"/><span className="title_description">Improve transport efficiency by 30%</span></p>
                     </div>
                 </div>
             </div>

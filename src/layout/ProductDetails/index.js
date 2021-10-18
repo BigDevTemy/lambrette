@@ -1,7 +1,7 @@
 import React from "react";
 
-const Index = ({details})=>{
-    console.log('details',details)
+const Index = ()=>{
+    
     return(
         <div>
             <div className="cooling-details">
