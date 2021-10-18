@@ -26,7 +26,8 @@ const cart =(state,{payload,type})=>{
                 ...state,
                 cart:{
                     ...state.cart,
-                    save_loader:true
+                    save_loader:true,
+                    error:null
                 }
             }
         }
@@ -37,7 +38,8 @@ const cart =(state,{payload,type})=>{
                     ...state.cart,
                     cart_data:null,
                     success:false,
-                    save_loader:false
+                    save_loader:false,
+                    error:null,
                 }
             }
         case SAVE_ERROR:

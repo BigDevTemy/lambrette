@@ -37,7 +37,7 @@ const index = ()=>{
                </div>
                <div className="footer_ourproducts">
                    <h5>Contact Us</h5>
-                   <div><a href="" style={{color:'#fff'}}>Email Address:webdev@outlook.com</a></div>
+                   <div><a href="" style={{color:'#fff'}}>Email Address:contact@boulos.ng</a></div>
                    
                </div>
                

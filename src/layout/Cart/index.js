@@ -68,15 +68,20 @@ const CartUI = ({currentCart})=>{
         }
         const data = [store,contact];
         clearcart(data)(cartDispatch)
-        localStorage.removeItem('cart')
-
-        setOpen(false);
-        Swal.fire(
-            'Order Successfully Sent!',
-            'You will get a callback from Our Marketing Team!',
-            'success'
-          )
-          history.push('/boulos/exhibition');
+        if(!error){
+            localStorage.removeItem('cart')
+            setOpen(false);
+            Swal.fire(
+                'Order Successfully Sent!',
+                'You will get a callback from Our Marketing Team!',
+                'success'
+              )
+              history.push('/boulos/exhibition');
+        }
+        else{
+            console.log('error',error)
+        }
+       
     }
     return(
         <div className="cartui">

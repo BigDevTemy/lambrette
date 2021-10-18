@@ -12,7 +12,8 @@ export default (data)=>(dispatch)=>{
         contact:data[1]
     }))
     .then(res=>{
-        if(res.data == "mail sent"){
+        // console.log('RES',res.data.data)
+        if(res.data.data == "Mail Sent"){
             dispatch({
                 type:CLEAR_CART
             })
