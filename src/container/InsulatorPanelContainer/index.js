@@ -1,7 +1,18 @@
 import React from "react";
+import Header from '../../component/Header'
+import Footer from '../../component/Footer'
+import InsulationPanelUI from "../../layout/InsulationPanelUI";
+import Features from '../../layout/InsulationPanelUI/Features'
+import ProductSpecification from '../../layout/InsulationPanelUI/ProductSpecification'
 const InsulatorPanel = ()=>{
     return(
-        <div>Welcome To InsulatorPanel Section</div>
+        <div>
+           <Header/>
+           <InsulationPanelUI/>
+           <Features/>
+            <ProductSpecification/>
+           <Footer/>
+        </div>
     )
 }
 

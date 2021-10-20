@@ -7,7 +7,7 @@ const MyCart = ()=>{
    const callback = (store)=>{
        setcartLength(store)
    }
-   console.log('Parent',cartLength)
+  
     return(
         <div className="cartMainDiv">
             <Header store={cartLength}/>

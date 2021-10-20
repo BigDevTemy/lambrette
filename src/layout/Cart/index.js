@@ -67,20 +67,22 @@ const CartUI = ({currentCart})=>{
             phonenumber:phonenumber
         }
         const data = [store,contact];
+        console.log('data',data)
         clearcart(data)(cartDispatch)
-        if(!error){
-            localStorage.removeItem('cart')
-            setOpen(false);
-            Swal.fire(
-                'Order Successfully Sent!',
-                'You will get a callback from Our Marketing Team!',
-                'success'
-              )
-              history.push('/boulos/exhibition');
-        }
-        else{
-            console.log('error',error)
-        }
+        
+        // if(error.length == 0){
+        //     localStorage.removeItem('cart')
+        //     setOpen(false);
+        //     Swal.fire(
+        //         'Order Successfully Sent!',
+        //         'You will get a callback from Our Marketing Team!',
+        //         'success'
+        //       )
+        //       history.push('/boulos/exhibition');
+        // }
+        // else{
+        //     console.log('error',error)
+        // }
        
     }
     return(

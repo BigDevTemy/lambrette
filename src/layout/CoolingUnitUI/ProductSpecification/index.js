@@ -205,7 +205,7 @@ const Specification = ({loading,data})=>{
                                     </div>
                                     
                                 </div>
-                                <div className="viewdetails_btn" onClick={()=>{view_details(d)}}>View Details</div>
+                                <div className="viewdetails_btn"><Link to={{ pathname: "/boulos/view/details", state: { fromDashboard: d }}} style={{color:'#fff'}}>View Details</Link></div>
                             </div> 
                 })
             }

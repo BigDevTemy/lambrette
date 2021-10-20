@@ -55,7 +55,9 @@ const index = ({loading,data,error})=>{
                                   </div>
                                   <div className="productTitle">
                                       <div className="title">{d.category_name}</div>
-                                      <div className="pointerDiv"><Link to="/boulos/prefabricated/cold/chain" state={{cat_id:'1'}}><Image src={Pointer} className="pointer_size"/></Link></div>
+                                      {d.category_name == "Prefabricated Cold Chain" ? <div className="pointerDiv"><Link to="/boulos/prefabricated/cold/chain" state={{cat_id:'1'}}><Image src={Pointer} className="pointer_size"/></Link></div>:''}
+                                      {d.category_name == "Cooling Unit" ? <div className="pointerDiv"><Link to="/boulos/cooling/units" state={{cat_id:'1'}}><Image src={Pointer} className="pointer_size"/></Link></div>:''}
+                                      {d.category_name == "Insulation Panel" ? <div className="pointerDiv"><Link to="/boulos/insulation/panel" state={{cat_id:'1'}}><Image src={Pointer} className="pointer_size"/></Link></div>:''}
                                   </div>
                                 </div> 
                         }) :null

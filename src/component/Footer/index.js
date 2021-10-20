@@ -20,6 +20,11 @@ const index = ()=>{
            <div className="footer-tab">
                <div>
                    <Image  src={logo}/>
+                   <address>
+                    Boulos Enterprises Limited Plot 10, Block D Acme road,<br/> Ogba P.O. Box 241 Ikeja, Lagos.<br/>
+                    Sales Team Contact: 0903 386 4676<br/>
+                    Contact Email:contact@boulos.ng
+                   </address>
                </div>
                <div className="footer_ourproducts">
                   <h5> Our Products</h5>

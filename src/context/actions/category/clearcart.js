@@ -12,19 +12,19 @@ export default (data)=>(dispatch)=>{
         contact:data[1]
     }))
     .then(res=>{
-        // console.log('RES',res.data.data)
-        if(res.data.data == "Mail Sent"){
-            dispatch({
-                type:CLEAR_CART
-            })
-        }
-        else{
-            dispatch({
-                type:SAVE_ERROR,
-                payload:'Order Sending Failed'
+        console.log('RES',res.data)
+        // if(res.data.data == "Mail Sent"){
+        //     dispatch({
+        //         type:CLEAR_CART
+        //     })
+        // }
+        // else{
+        //     dispatch({
+        //         type:SAVE_ERROR,
+        //         payload:res.data
     
-            })
-        }
+        //     })
+        // }
         
     })
     .catch((err=>{
