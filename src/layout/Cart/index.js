@@ -38,6 +38,16 @@ const CartUI = ({currentCart})=>{
                 'error'
               )
         }
+        // else{
+        //     localStorage.removeItem('cart')
+        //         setOpen(false);
+        //         Swal.fire(
+        //             'Order Successfully Sent!',
+        //             'You will get a callback from Our Marketing Team!',
+        //             'success'
+        //           )
+        //           history.push('/boulos/exhibition');
+        // }
     },[error])
 
     const deleteItem = (pname)=>{
@@ -70,19 +80,19 @@ const CartUI = ({currentCart})=>{
         console.log('data',data)
         clearcart(data)(cartDispatch)
         
-        // if(error.length == 0){
-        //     localStorage.removeItem('cart')
-        //     setOpen(false);
-        //     Swal.fire(
-        //         'Order Successfully Sent!',
-        //         'You will get a callback from Our Marketing Team!',
-        //         'success'
-        //       )
-        //       history.push('/boulos/exhibition');
-        // }
-        // else{
-        //     console.log('error',error)
-        // }
+        if(error.length == 0){
+            localStorage.removeItem('cart')
+            setOpen(false);
+            Swal.fire(
+                'Order Successfully Sent!',
+                'You will get a callback from Our Marketing Team!',
+                'success'
+              )
+              history.push('/boulos/exhibition');
+        }
+        else{
+            console.log('error',error)
+        }
        
     }
     return(

@@ -9,12 +9,12 @@ const index = ()=>{
             <div className="social-media h5">
                 <div>Get Connected with us on social network</div>
                 <div className="socialmedia-icon">
-                    <span><Facebook/></span>
-                    <span><Instagram/></span>
+                    <span><a href="https://www.facebook.com/BoulosEnterprisesLimited" style={{color:'#fff'}}><Facebook/></a></span>
+                    <span><a href="https://www.instagram.com/boulosenterpriseslimited/" style={{color:'#fff'}}><Instagram/></a></span>
                     <span><Google/></span>
-                    <span><Linkedin/></span>
-                    <span><Github/></span>
-                    <span><Twitter/></span>
+                    <span><a href=" https://www.linkedin.com/company/boulos-enterprises-ltd/mycompany/" style={{color:'#fff'}}><Linkedin/></a></span>
+                    
+                    <span><a href="https://twitter.com/boulos_ent_ltd" style={{color:'#fff'}}><Twitter/></a></span>
                 </div>
             </div>
            <div className="footer-tab">

@@ -42,10 +42,11 @@ const Header = ({store})=>{
                         <div style={{marginTop:20}}>
                             <div className="mobile-navItem">Home</div>
                             <div className="mobile-navItem space">Products
+                            
                                 <ul>
-                                    <li><a href="/boulos/prefabricated/cold/chain">Prefabricated Cooling Chain</a></li>
-                                    <li><a href="/boulos/cooling/units">Cooling Unit</a></li>
-                                    <li><a href="/boulos/insulation/panel">Insulation Panel</a></li>
+                                    <li><Link to="/boulos/prefabricated/cold/chain">Prefabricated Cooling Chain</Link></li>
+                                    <li><Link to="/boulos/cooling/units">Cooling Unit</Link></li>
+                                    <li><Link to="/boulos/insulation/panel">Insulation Panel</Link></li>
                                 </ul>
                             </div>
                             <div className="mobile-navItem space">Services
@@ -94,9 +95,10 @@ const Header = ({store})=>{
                     <div class="dropdown">
                         <div class="dropbtn">Products</div>
                         <div class="dropdown-content">
-                            <a href="/boulos/prefabricated/cold/chain">Prefabricated Cold Chain Solution</a>
-                            <a href="/boulos/cooling/units">Cooling Unit</a>
-                            <a href="/boulos/insulation/panel">Insulation Panel</a>
+                             <Link to="/boulos/prefabricated/cold/chain">Prefabricated Cooling Chain</Link>
+                             <Link to="/boulos/cooling/units">Cooling Chain</Link>
+                             <Link to="/boulos/insulation/panel">Insulation Panel</Link>
+                            
                         </div>
                     </div>
                     <div class="dropdown">
