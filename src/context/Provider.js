@@ -15,6 +15,7 @@ export const GlobalProvider = ({ children}) =>{
     const [categoryState,categoryDispatch]= useReducer(category,categoryInitialState);
     const [subcategoryListState,subcategoryListDispatch] = useReducer(subcategoryListReducer,subcategoryList);
     const [cartState,cartDispatch] = useReducer(cart,addtoCart);
+    
     // const [productState,productDispatch]= useReducer(product,productInitialState);
 
     return <GlobalContext.Provider value={
