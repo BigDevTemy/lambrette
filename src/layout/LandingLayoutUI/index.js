@@ -12,7 +12,7 @@ const index = ()=>{
                 <div className="bannerText">
                    <h1 className="newDispensation">Welcome To a new Dispensation</h1>
                    <p className="leverageClass">We are leveraging on the power of technology to bring a revolution of new age technical solution</p>
-                   <div className="btn-customize">View Details</div>
+                   <div className="btn-customize"><a href="http://www.lamberet.cn/">Learn more</a></div>
                 </div>
                 <div className="demoImageDiv">
                    <Image src={Demo1}  className="demoImage"/>

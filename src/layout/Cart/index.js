@@ -7,12 +7,16 @@ import { useHistory } from "react-router";
 import cart from "../../context/reducers/cart";
 import Swal from "sweetalert2";
 import clearcart from "../../context/actions/category/clearcart";
+import cart_cart from '../../assets/images/cart_cart.jpg'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 const CartUI = ({currentCart})=>{
     const {cartState,cartDispatch} = useContext(GlobalContext);
     const {cart:{cart_data}} = cartState;
     const {cart:{save_loader}} = cartState;
+    
     const {cart:{error}} = cartState;
+
+    
     // const [cartStore,setCartStore] =  useLocalStorage('cart',cart_data);
     //const  cart = localStorage.getItem("cart");
     //const pcart = JSON.parse(cart) != null ? JSON.parse(cart) : [];
@@ -20,10 +24,11 @@ const CartUI = ({currentCart})=>{
     const localstorageVar = localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0 ? JSON.parse(localStorage.getItem('cart')):[];
     const [store,setStore] = useState([]);
     const [open,setOpen] =useState(false)
-    const[fname,setfname]=useState();
-    const[lname,setlname]=useState();
-    const[email,setemail]=useState();
-    const[phonenumber,setphonenumber]=useState();
+    const[fname,setfname]=useState("");
+    const[lname,setlname]=useState("");
+    const[email,setemail]=useState("");
+    const[submit_contact,setsubmit_contact]=useState(false);
+    const[phonenumber,setphonenumber]=useState("");
     currentCart(store)
     useEffect(()=>{
         // localStorage.removeItem('cart')
@@ -38,16 +43,8 @@ const CartUI = ({currentCart})=>{
                 'error'
               )
         }
-        // else{
-        //     localStorage.removeItem('cart')
-        //         setOpen(false);
-        //         Swal.fire(
-        //             'Order Successfully Sent!',
-        //             'You will get a callback from Our Marketing Team!',
-        //             'success'
-        //           )
-        //           history.push('/boulos/exhibition');
-        // }
+        
+        
     },[error])
 
     const deleteItem = (pname)=>{
@@ -69,32 +66,37 @@ const CartUI = ({currentCart})=>{
     const handlephonenumber =(e)=>{
         setphonenumber(e.target.value)
     }
-    const sendMail=()=>{
-        const contact = {
-            fname:fname,
-            lname:lname,
-            email:email,
-            phonenumber:phonenumber
-        }
-        const data = [store,contact];
-        console.log('data',data)
-        clearcart(data)(cartDispatch)
-        
-        if(error.length == 0){
-            localStorage.removeItem('cart')
-            setOpen(false);
-            Swal.fire(
-                'Order Successfully Sent!',
-                'You will get a callback from Our Marketing Team!',
-                'success'
-              )
-              history.push('/boulos/exhibition');
-        }
-        else{
-            console.log('error',error)
+    const sendmail = ()=>{
+        if(fname!="" && lname!="" && email!="" && phonenumber!=""){
+            const contact = {
+                fname:fname,
+                lname:lname,
+                email:email,
+                phonenumber:phonenumber
+            }
+            
+            console.log("contact",contact)
+            const data = [store,contact];
+            console.log('data',data)
+            clearcart(data)(cartDispatch)
+            
+            if(error.length == 0){
+                localStorage.removeItem('cart')
+                setOpen(false);
+                Swal.fire(
+                    'Order Successfully Sent!',
+                    'You will get a callback from Our Marketing Team!',
+                    'success'
+                  )
+                  history.push('/boulos/exhibition');
+            }
+            else{
+                console.log('error',error)
+            }
         }
        
     }
+    
     return(
         <div className="cartui">
              <Modal
@@ -104,16 +106,17 @@ const CartUI = ({currentCart})=>{
                 >
                     <Modal.Header>Contact Form</Modal.Header>
                     <Modal.Content image>
-                        <Image size='medium' src='https://react.semantic-ui.com/images/wireframe/image-square.png' wrapped />
+                        <Image size='medium' src={cart_cart} wrapped />
                         <Modal.Description style={{width:'100%',marginTop:0}}>
                         <Form>
+                        
                             <Form.Field>
                             <label>First Name</label>
-                            <input placeholder='First Name' onChange={handlefname} required value={fname} />
+                            <input placeholder='First Name' onChange={handlefname}  value={fname} required />
                             </Form.Field>
                             <Form.Field>
                             <label>Last Name</label>
-                            <input placeholder='Last Name' required onChange={handlelname}  value={lname}/>
+                            <input placeholder='Last Name'  onChange={handlelname}  value={lname} required/>
                             </Form.Field>
                             <Form.Field>
                                  <label>Email Address</label>
@@ -123,7 +126,7 @@ const CartUI = ({currentCart})=>{
                                  <label>PhoneNumber</label>
                                 <input type="number" placeholder='PhoneNumber' onChange={handlephonenumber} required />
                             </Form.Field>
-                            <Button type='submit' loading={save_loader} disabled={save_loader} positive onClick={()=>{sendMail()}}>Submit</Button>
+                            <Button type='submit'  loading={save_loader} disabled={submit_contact} positive onClick={()=>{sendmail()}} >Submit</Button>
                             <Button onClick={() => setOpen(false)}>Cancel</Button>
                         </Form>
                         </Modal.Description>
